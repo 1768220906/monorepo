@@ -3,6 +3,10 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     // 生成声明文件（组件库一定要开启）
     "declaration": true,
     "declarationMap": true,
@@ -18,12 +22,16 @@
     // 组件库一般不需要 DOM 类型，交由使用方决定（你也可以保留）
     // "types": []
     // 确保使用 ES 模块输出（配合打包工具）
-    "module": "ESNext",
+    "module": "nodenext",
     // 类型查找逻辑不依赖 Vite/webpack，组件库使用 nodenext 最稳
     "moduleResolution": "nodenext"
   },
   // 组件库只包含 src
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   // 排除最终构建目录
-  "exclude": ["dist"]
+  "exclude": [
+    "dist"
+  ]
 }

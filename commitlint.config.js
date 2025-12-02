@@ -90,6 +90,6 @@ export default {
     ],
 
     // 默认的 scope 列表
-    scopes: ["web", "admin", "components", "utils", "server", "docs"],
+    scopes: ["app", "api", "ui", "deps", "build", "docs"],
   },
 };

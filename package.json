@@ -6,10 +6,12 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:prettier": "prettier --write '**/*.{ cjs, html,js,ts,jsx,tsx,vue,css,scss,json,md}'",
+    "lint:prettier": "prettier --write '**/*.{cjs,html,js,ts,jsx,tsx,vue,css,scss,json,md}'",
     "lint:eslint": "eslint",
     "lint:spellcheck": "cspell lint \"**/*.{cjs,html,js,ts,jsx,tsx,vue,css,scss,json,md}\"",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "prepare": "husky",
+    "precommit": "lint-staged"
   },
   "config": {
     "commitizen": {
@@ -37,6 +39,8 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
     "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.7.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
