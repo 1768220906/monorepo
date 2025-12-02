@@ -1,0 +1,161 @@
+# =========================
+# OS SYSTEM FILES
+# =========================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.nfs*
+
+
+# =========================
+# Node / JavaScript / Frontend
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# dotenv files
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+out/
+coverage/
+*.tsbuildinfo
+
+# Next.js / Nuxt / Vite / Vue / React
+.next/
+.nuxt/
+.svelte-kit/
+.vercel/
+.netlify/
+.vite/
+vite.config.time.*
+temp/
+
+
+# =========================
+# Logs & Debug
+# =========================
+logs/
+*.log
+*.log.*
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+
+# =========================
+# IDE / Editor
+# =========================
+# VSCode
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+out/
+
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+# Others
+*.swp
+*.swo
+
+
+# =========================
+# Backend / Server
+# =========================
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pytest_cache/
+*.mypy_cache/
+
+# Django
+staticfiles/
+media/
+*.sqlite3
+
+# Java
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Go
+bin/
+*.exe
+
+
+# =========================
+# Git
+# =========================
+.git/
+.gitignore.local
+.gitattributes
+
+
+# =========================
+# Misc
+# =========================
+*.bak
+*.tmp
+*.temp
+*.orig
+*.backup
+*.log
+*.cache
+cache/
+tmp/
+
+# Binary files
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+*.dat
+
+# Compressed files
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.tgz
+
+# Image caches
+*.thumb

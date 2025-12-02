@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    // 生成类型声明（工具库必须）
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    // Project References 必须开启
+    "composite": true,
+    // 不编译 JS 文件，工具库一般只维护 TS
+    "allowJs": false,
+    // 工具库不需要 DOM 类型
+    "lib": ["ES2020"],
+    // 模块输出格式（配合打包器）
+    "module": "ESNext",
+    // 工具库推荐用 nodenext（比 bundler 更符合 NPM 行为）
+    "moduleResolution": "nodenext",
+    // 允许 import json 文件
+    "resolveJsonModule": true
+  },
+  "include": ["src"],
+  "exclude": ["dist"]
+}

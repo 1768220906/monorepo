@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": [],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "allowJs": false,
+    "strict": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["../../packages/components/src/*"],
+      "@utils/*": ["../../packages/utils/src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["dist"],
+  "references": [
+    {
+      "path": "../../packages/components"
+    },
+    {
+      "path": "../../packages/utils"
+    }
+  ]
+}
