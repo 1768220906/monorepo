@@ -11,3 +11,12 @@ husky
 tseslint
 Antd
 monorepo
+vite
+zustand
+tanstack
+jsonplaceholder
+typicode
+devtools
+scss
+vitejs
+Sider

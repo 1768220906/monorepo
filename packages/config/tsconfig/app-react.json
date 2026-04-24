@@ -4,10 +4,13 @@
   "compilerOptions": {
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx",
+    "module": "ESNext",
     "moduleResolution": "bundler",
+    "types": ["vite/client"],
+    "declaration": false,
+    "declarationMap": false,
     "allowJs": false,
     "resolveJsonModule": true,
-    // 前端 app 的构建由 Vite 负责，tsc 只做类型校验
     "noEmit": true
   }
 }

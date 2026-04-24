@@ -7,7 +7,7 @@
       "@utils/*": ["../../packages/utils/src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "vite.config.ts"],
   "exclude": ["dist"],
   "references": [
     {

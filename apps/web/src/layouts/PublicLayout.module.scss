@@ -1,0 +1,27 @@
+.publicHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: #001529;
+  color: #fff;
+}
+
+.publicNav {
+  display: flex;
+  gap: 16px;
+}
+
+.publicNav a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+
+.publicNav a:hover {
+  color: #fff;
+}
+
+.publicMain {
+  padding: 24px;
+  min-height: calc(100vh - 64px);
+}

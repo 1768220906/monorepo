@@ -1,1 +1,1 @@
-console.log("Components package index file loaded.");
+export { BrandMark } from "./BrandMark.js";

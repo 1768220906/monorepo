@@ -8,7 +8,9 @@
     "tsconfig.json",
     ".prettierrc*",
     "prettier.config.*",
-    "eslint.config.*"
+    "eslint.config.*",
+    "apps/*/vite.config.ts",
+    "apps/*/index.html"
   ],
   "tasks": {
     "build": {
