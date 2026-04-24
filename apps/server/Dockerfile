@@ -8,6 +8,7 @@ COPY . .
 
 RUN pnpm install --no-frozen-lockfile
 RUN pnpm --filter @monorepo/server build
+RUN pnpm deploy --filter @monorepo/server --prod /prod/server
 
 FROM node:20-alpine
 
@@ -16,12 +17,8 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3000
 
-RUN corepack enable
-
-COPY . .
-RUN pnpm install --prod --filter @monorepo/server... --no-frozen-lockfile
-COPY --from=builder /workspace/apps/server/dist ./apps/server/dist
+COPY --from=builder /prod/server ./
 
 EXPOSE 3000
 
-CMD ["pnpm", "--filter", "@monorepo/server", "start"]
+CMD ["node", "dist/index.js"]
