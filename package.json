@@ -6,6 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -b",
+    "clean": "tsc -b --clean",
+    "typecheck": "tsc -b && pnpm --filter \"./apps/*\" -r --parallel run typecheck",
     "lint:prettier": "prettier --write '**/*.{cjs,html,js,ts,jsx,tsx,vue,css,scss,json,md}'",
     "lint:eslint": "eslint",
     "lint:spellcheck": "cspell lint \"**/*.{cjs,html,js,ts,jsx,tsx,vue,css,scss,json,md}\"",
