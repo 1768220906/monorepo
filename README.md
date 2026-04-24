@@ -295,6 +295,51 @@ pnpm commit
 
 ---
 
+## 11. CI 与部署（GitHub Actions）
+
+仓库已提供开箱可用的 GitHub Actions 工作流：
+
+- 文件：`.github/workflows/ci.yml`
+- 触发：`push` 到 `main/develop`，以及所有 `pull_request`
+- 步骤：
+  - `pnpm install --no-frozen-lockfile`
+  - `pnpm typecheck`
+  - `pnpm lint:eslint`
+  - `pnpm lint:spellcheck`
+  - `pnpm build`
+
+### 11.1 Docker 镜像构建
+
+仓库已提供三份 Dockerfile：
+
+- `apps/web/Dockerfile`
+- `apps/admin/Dockerfile`
+- `apps/server/Dockerfile`
+
+在仓库根目录执行：
+
+```bash
+docker build -f apps/web/Dockerfile -t monorepo-web:latest .
+docker build -f apps/admin/Dockerfile -t monorepo-admin:latest .
+docker build -f apps/server/Dockerfile -t monorepo-server:latest .
+```
+
+运行示例：
+
+```bash
+docker run --rm -p 8080:80 monorepo-web:latest
+docker run --rm -p 8081:80 monorepo-admin:latest
+docker run --rm -p 3000:3000 -e PORT=3000 monorepo-server:latest
+```
+
+### 11.2 部署策略建议
+
+- `web/admin`：静态站点部署（Nginx、CDN、Vercel、Netlify）
+- `server`：容器部署（Kubernetes、ECS、云托管容器）
+- 通过 CI 产物一致性保证 “本地 build 与线上 build 一致”
+
+---
+
 ## License
 
 ISC
