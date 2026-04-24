@@ -6,15 +6,6 @@
     },
     {
       "path": "./packages/utils"
-    },
-    {
-      "path": "./apps/web"
-    },
-    {
-      "path": "./apps/admin"
-    },
-    {
-      "path": "./apps/server"
     }
   ]
 }

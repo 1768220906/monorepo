@@ -9,5 +9,5 @@
       "addWords": true
     }
   ],
-  "ignorePaths": ["node_modules/**", "dist/**", "build/**", ".git/**"]
+  "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/build/**", ".git/**"]
 }

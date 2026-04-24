@@ -1,20 +1,13 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "@monorepo/config/tsconfig/app-react.json",
   "compilerOptions": {
-    "jsx": "react-jsx", // 如果是 Vue 项目请删除这一行
-    "types": [],
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "allowJs": false,
-    "strict": true,
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "@components/*": ["../../packages/components/src/*"],
       "@utils/*": ["../../packages/utils/src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "vite.config.ts"],
   "exclude": ["dist"],
   "references": [
     {

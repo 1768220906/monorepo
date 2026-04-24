@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "jsx": "react-jsx",
+    // Project References 所需
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    // 源码直连模式下，tsc 仅产出 .d.ts，运行时由下游 bundler 消费源码
+    "emitDeclarationOnly": true,
+    "moduleResolution": "bundler",
+    "allowJs": false,
+    "resolveJsonModule": true
+  }
+}

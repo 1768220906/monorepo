@@ -1,0 +1,36 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "ui": "stream",
+  "globalDependencies": [
+    "packages/config/tsconfig/**",
+    "packages/config/eslint/**",
+    "packages/config/prettier/**",
+    "tsconfig.json",
+    ".prettierrc*",
+    "prettier.config.*",
+    "eslint.config.*",
+    "apps/*/vite.config.ts",
+    "apps/*/index.html"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "!dist/**/*.map"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}

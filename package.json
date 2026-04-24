@@ -5,13 +5,18 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:prettier": "prettier --write '**/*.{cjs,html,js,ts,jsx,tsx,vue,css,scss,json,md}'",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"**/*.{cjs,html,js,ts,jsx,tsx,vue,css,scss,json,md}\"",
     "lint:eslint": "eslint",
     "lint:spellcheck": "cspell lint \"**/*.{cjs,html,js,ts,jsx,tsx,vue,css,scss,json,md}\"",
     "commit": "git-cz",
     "prepare": "husky",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "config": {
     "commitizen": {
@@ -29,21 +34,17 @@
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@cspell/dict-lorem-ipsum": "^4.0.5",
-    "@eslint/js": "^9.39.1",
+    "@monorepo/config": "workspace:*",
     "@types/node": "^24.10.1",
     "commitizen": "^4.3.1",
     "cspell": "^9.4.0",
     "cz-git": "^1.12.0",
     "eslint": "^9.39.1",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-prettier": "^5.5.4",
-    "globals": "^16.5.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.7.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.0"
+    "turbo": "^2.3.3",
+    "typescript": "^5.9.3"
   }
 }

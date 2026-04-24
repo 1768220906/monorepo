@@ -1,13 +1,30 @@
 {
   "name": "@monorepo/utils",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
+  "description": "共享工具库（monorepo 内部以源码直连方式消费）",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -b",
+    "clean": "tsc -b --clean",
+    "typecheck": "tsc -b"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.23.0"
+  "packageManager": "pnpm@10.23.0",
+  "devDependencies": {
+    "@monorepo/config": "workspace:*"
+  }
 }
