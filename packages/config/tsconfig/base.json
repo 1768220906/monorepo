@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // 编译目标语法版本：ESNext，保持现代语法不做向旧环境降级
+    "target": "esnext",
+    // 清空 types 避免自动引入 Node / Jest 等全局类型
+    "types": [],
+    // 默认只提供 ESNext 内建 API，DOM / Node 由上层按需叠加
+    "lib": ["ESNext"],
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    // 访问不存在 key 的数组 / 对象时提示 undefined
+    "noUncheckedIndexedAccess": true,
+    // 可选属性必须显式声明 undefined 才能赋值
+    "exactOptionalPropertyTypes": true,
+    "strict": true,
+    // 保持 import / export 原样，对 bundler 更友好
+    "verbatimModuleSyntax": true,
+    // 模块解析默认交给 bundler（Vite / Rollup / webpack），Node 场景由上层覆盖
+    "moduleResolution": "bundler",
+    "isolatedModules": true,
+    // 禁止不带 import 只执行副作用的文件，防止 tree-shaking 失效
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", "dist"]
+}

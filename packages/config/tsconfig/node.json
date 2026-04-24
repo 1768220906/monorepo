@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "lib": ["ESNext"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "ES2023",
+    "allowJs": false,
+    "resolveJsonModule": true,
+    // Node 应用开发用 tsx 热更新、生产用 tsup 打包，tsc 只做类型校验
+    "noEmit": true
+  }
+}

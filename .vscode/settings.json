@@ -2,5 +2,5 @@
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "editor.formatOnSave": true,
   "prettier.enableDebugLogs": true,
-  "prettier.configPath": "./.prettierrc.json"
+  "prettier.configPath": "./prettier.config.js"
 }

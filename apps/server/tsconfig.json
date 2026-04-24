@@ -1,17 +1,11 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "@monorepo/config/tsconfig/node.json",
   "compilerOptions": {
-    "types": ["node"],
-    "lib": ["ESNext"],
-    "outDir": "dist",
     "rootDir": "src",
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "target": "ES2020",
-    "allowJs": false,
-    "strict": true,
-    "resolveJsonModule": true
+    "outDir": "dist"
   },
+  "include": ["src"],
+  "exclude": ["dist"],
   "references": [
     {
       "path": "../../packages/utils"
