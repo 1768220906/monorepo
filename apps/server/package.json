@@ -4,6 +4,9 @@
   "description": "",
   "type": "module",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsup src/index.ts --format esm --target node20 --out-dir dist --clean --sourcemap",

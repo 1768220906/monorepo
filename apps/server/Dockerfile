@@ -6,22 +6,18 @@ RUN corepack enable
 
 COPY . .
 
-RUN pnpm install --no-frozen-lockfile
+RUN pnpm install --frozen-lockfile
 RUN pnpm --filter @monorepo/server build
+RUN pnpm --filter @monorepo/server deploy --prod /prod/server
 
-FROM node:20-alpine
+FROM node:20-alpine AS runner
 
 WORKDIR /app
 
 ENV NODE_ENV=production
 ENV PORT=3000
 
-RUN corepack enable
-
-COPY --from=builder /workspace/apps/server/package.json ./package.json
-COPY --from=builder /workspace/apps/server/dist ./dist
-RUN node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('./package.json','utf8'));delete p.devDependencies;delete p.scripts;fs.writeFileSync('./package.json',JSON.stringify(p,null,2));"
-RUN pnpm install --prod --no-frozen-lockfile
+COPY --from=builder /prod/server ./
 
 EXPOSE 3000
 
